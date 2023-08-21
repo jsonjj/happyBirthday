@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <title>One Night</title>
+</head>
+
+<body>
+    <h1>One Night</h1>
+    <p id="birthdayMessage">Happy Birthday </p>
+
+    <div id="inputScreen" style="display:block">
+        <p id="nameInput" style="visibility:visible">Instructions: Input Your Name</p>
+        <button id="returnName" onclick="returnName()">Submit</button>
+    </div>
+
+    <span id="q1" style="display:none">
+        <form action="/determineMove.js">
+          <label for="bday1">Is this you:</label>
+          <select name="bday1" id="bday1">
+            <option value="atATime">It was me in a past life. Before I grew a bit.</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+          <br><br>
+          <img src="pastLife.jpg">
+          <br><br>
+          <input type="submit" value="Submit">
+        </form>
+    </span>
+
+    <span id="response" style="display:none">
+      <p id="respond"></p>
+    </span>
+  
+    <span id="q2" style="display:none">
+        <form action="/determineMove.js">
+          <label for="bday2">What about this:</label>
+          <select name="bday2" id="bday2">
+            <option value="atATime">I forget.</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+          <br><br>
+          <img src="onlineLife.jpg">
+          <br><br>
+          <input type="submit" value="Submit">
+        </form>
+    </span>
+
+    <span id="bDay" style="display:none">
+      <p id="bD"></p>
+      <img src="celebrate.jpg">
+    </span>
+  
+  <script src="/bDay.js"></script>
+</body>
+
+</html>
