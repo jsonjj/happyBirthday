@@ -8,7 +8,6 @@
 
 <body>
     <h1>Who's the birthday boy</h1>
-    <p id="birthdayMessage">Happy Birthday </p>
 
     <div id="inputScreen" style="display:block">
         Name: <input id="createNameInput">
@@ -18,18 +17,13 @@
     </div>
 
     <span id="q1" style="display:none">
-        <form action="/determineMove.js">
-          <label for="bday1">Is this you:</label>
-          <select name="bday1" id="bday1">
-            <option value="atATime">It was me in a past life. Before I grew a bit.</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-          </select>
-          <br><br>
-          <img src="pastLife.jpg">
-          <br><br>
-          <input type="submit" value="Submit">
-        </form>
+        <p>Is this you</p>
+        <br><br>
+        <img src="pastLife.jpg">
+        <br><br>
+        <button id="yes" onclick="heSaidYes()">Yes</button>
+        <button id="no" onclick="heSaidNo()">No</button>
+        <button id="atATime" onclick="atATime()">It was me in a past life. Before I gained my protective layer.</button>
     </span>
 
     <span id="response" style="display:none">
@@ -37,18 +31,12 @@
     </span>
   
     <span id="q2" style="display:none">
-        <form action="/determineMove.js">
-          <label for="bday2">What about this:</label>
-          <select name="bday2" id="bday2">
-            <option value="atATime">I forget.</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-          </select>
-          <br><br>
-          <img src="onlineLife.jpg">
-          <br><br>
-          <input type="submit" value="Submit">
-        </form>
+        <p>Is this you</p>
+        <br><br>
+        <img src="onlineLife.jpg">
+        <br><br>
+        <button id="yes" onclick="heSaidYesTwo()">Yes</button>
+        <button id="no" onclick="heSaidNoTwo()">No</button>
     </span>
 
     <span id="bDay" style="display:none">
