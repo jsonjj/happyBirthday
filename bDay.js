@@ -1,5 +1,6 @@
 var nameInput;
 var respond = document.getElementById("respond");
+var bD = document.getElementById("bD");
 
 function returnName() {
   nameInput = createNameInput.value;
