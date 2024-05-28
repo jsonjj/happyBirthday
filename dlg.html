@@ -1,0 +1,72 @@
+<style>
+  form{
+    padding:16px;
+    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    font-size:14px;
+  }
+  input,textarea{
+    width:100%;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+  }
+  input:focus,textarea:focus{
+    border-bottom: 2px solid #4285f4;
+    outline:none;
+  }
+
+  label{
+    font-weight:bold;
+    margin:0 0 8px;
+    display:block;
+    text-transform:uppercase;
+  }
+  button{
+    font-weight: 500;
+    font-size: 14px;
+    height: 36px;
+    letter-spacing: .25px;
+    line-height: 16px;
+    padding: 9px 24px 11px;
+    background: #fbbc04;
+    color: #202124;
+    cursor: pointer;
+    border: 1px solid transparent!important;
+    border-radius: 4px;
+    box-shadow: none;
+    box-sizing: border-box;
+  }
+</style>
+<script>
+  let CURVEDTEXT_ID;
+  function save(){
+    var txt = document.querySelector('[name=curvedText]').value;
+    var radius = parseFloat(document.querySelector('[name=curveRadius]').value);
+    google.script.run.withSuccessHandler(function (id){
+      CURVEDTEXT_ID = id;
+    }).createCurvedText(txt, radius);
+    
+    return false;
+  }
+
+  function changed(){
+    var radius = parseFloat(document.querySelector('[name=curveRadius]').value);
+    var text = document.querySelector('[name=curvedText]').value;
+    google.script.run.changeCurvedText({radius,text,id:CURVEDTEXT_ID});
+  }
+</script>
+<form>
+<label for="curvedText">Your Text</label>
+<textarea name="curvedText" rows="3" placeholder="Input your text here and click 'Add'"></textarea>
+
+<label for="curveRadius">Curve Radius</label>
+<input name="curveRadius" type="range" min="10" max="500" value="100" oninput="changed();"/>
+<br/><br/>
+<button onclick="return save();">Add</button>
+
+
+<div>
+
+  <small>Read here how to use the <a href="https://www.psd-dude.com">Curved Text for Google Slides</a> add-on.</small>
+</div>
+
+</form>
